@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap')
+
+*
+    box-sizing: border-box
+
+html,body
+    padding: 0
+    margin: 0
+
+h1,h2,h3,h4,h5,h6
+    margin: 0
+    padding: 0
+
+body
+    font-family: 'Nunito', sans-serif
+    font-weight: 400
+    font-size: 16px
+    font-style: normal
+
+img
+    max-width: 100%
+    height: auto
+
+p
+    margin: 0
+    margin-bottom: 16px
+
+.text-logo
+    width: 100%
+    max-width: 257px
+
+    &.--v2
+        width: auto
+        max-width: unset
+        height: 25px
+        position: absolute
+        top: -17.5px
+        right: 36px
+        z-index: 9
+
+.text-white
+    color: #fff !important
+
+.btn-main
+    cursor: pointer
+    display: inline-block
+    color: #FFF
+    font-size: 12px
+    font-weight: 700
+    line-height: normal
+    padding: .75em 1.5em
+    border-radius: 9999px
+    background-color: #D90009
+    text-transform: uppercase
+    text-decoration: none
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.50)
+
+.section
+    padding-left: 36px
+    padding-right: 36px
+    width: 100%
+    max-width: 576px
+    margin: 0 auto
+
+.box-home-activity
+    padding-left: 0
+    padding-right: 0
+    background-image: url('images/background-1.jpg')
+    background-size: cover
+    background-position: center top
+    background-repeat: no-repeat
+    min-height: 100vh
+    padding-top: 50px
+    padding-bottom: 50px
+
+    .activity-main
+        // display: flex
+        // flex-direction: column
+        // align-items: flex-start
+        // justify-content: flex-start
+
+        .left
+            padding-left: 36px
+            padding-right: 36px
+            margin-bottom: 28px
+
+            .box-head
+                padding-bottom: 16px
+                position: relative
+
+                &:after
+                    content: ''
+                    width: 50%
+                    height: 2px
+                    background-color: #D90009
+                    position: absolute
+                    bottom: 0
+                    left: 0
+
+        .right
+            .box-head
+                padding-left: 36px
+                margin-bottom: 17px
+
+    .activity-item
+        cursor: pointer
+        position: relative
+        padding-bottom: 16px
+        // transition: all .4s ease
+
+        .activity-close
+            position: absolute
+            left: 36px
+            top: 50px
+            width: 24px
+            height: 24px
+            display: inline-flex
+            align-items: center
+            justify-content: center
+            z-index: 99
+            opacity: 0
+            visibility: hidden
+            transition: all .4s ease
+
+            &.active
+                opacity: 1
+                visibility: visible
+
+        &.active
+            .activity-img
+                img
+                    border-radius: 0
+                    filter: brightness(.5)
+
+                .content
+                    .activity-title
+                        padding-left: 16px
+
+                    p
+                        padding-left: 16px
+
+        .box-button
+            position: absolute
+            bottom: 0
+            right: 24px
+            z-index: 99
+
+            .btn-main
+                white-space: nowrap
+                // transiton
+
+                &.--tiktok
+                    position: absolute
+                    top: 0
+                    left: 50%
+                    transform: translateX(-50%)
+                    opacity: 0
+                    visibility: hidden
+                    z-index: 99
+                    transition: all .4s ease
+
+                    &.active
+                        opacity: 1
+                        visibility: visible
+
+        .activity-img
+            position: relative
+            line-height: 0
+
+            img
+                aspect-ratio: 1
+                object-fit: cover
+                width: 100%
+                border-radius: 40px
+                aspect-ratio: 1
+                object-fit: cover
+                transition: border-radius 1.5s ease, filter 1.5s ease
+
+            .content
+                position: absolute
+                bottom: 0
+                left: 0
+                padding: 0 20px 32px 20px
+                color: #fff
+                display: flex
+                flex-direction: column
+                justify-content: flex-end
+                align-items: flex-start
+                width: 100%
+                height: 100%
+                background: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 42.19%, rgba(0, 0, 0, 0.60) 100%)
+                border-radius: 40px
+                line-height: normal
+
+                .activity-title
+                    color: #FFF
+                    font-size: 30px
+                    font-weight: 800
+                    line-height: normal
+                    text-transform: uppercase
+
+                p
+                    margin-bottom: 0
+                    color: #FFF
+                    font-size: 14px
+                    font-weight: 700
+                    line-height: normal
+
+    .activity-body
+        padding: 47px 36px 36px 36px
+        width: 100%
+        position: absolute
+        bottom: 0
+        left: 0
+        background-color: #2A2A2A
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.00) 0%, #000 100%)
+        border-top-left-radius: 40px
+        border-top-right-radius: 40px
+        opacity: 0
+        visibility: hidden
+
+        &.active
+            .body-content
+                .body-title,
+                .desc
+                    transform: translateY(0)
+                    opacity: 1
+                    visibility: visible
+                    transition-delay: 1.5s
+
+                .desc
+                    transition-delay: 2s
+
+            .body-img
+                a
+                    opacity: 1
+                    overflow: hidden
+                    visibility: visible
+                    transform: translateY(0)
+
+                    &:first-child
+                        transition-delay: 2.5s
+
+                    &:nth-child(2)
+                        transition-delay: 3s
+                        position: relative
+
+                        &:after
+                            content: 'Xem thêm...'
+                            width: 100%
+                            height: 100%
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            background-color: rgb(0 0 0 / 50%)
+                            position: absolute
+                            top: 0
+                            left: 0
+                            border-radius: 18px
+                            color: #FFF
+                            font-size: 14px
+                            font-style: italic
+                            font-weight: 500
+                            line-height: normal
+
+        .body-img
+            display: flex
+            justify-content: space-between
+
+            a
+                flex: 0 0 calc(50% - 10px)
+                max-width: calc(50% - 10px)
+                line-height: 0
+                display: block
+                border-radius: 18px
+                opacity: 0
+                visibility: hidden
+                transform: translateY(15px)
+                transition: all 1s ease
+
+                img
+                    aspect-ratio: 142/243
+                    object-fit: cover
+                    width: 100%
+                    border-radius: 18px
+
+                &:nth-child(n+3)
+                    display: none
+
+        .body-content
+            .body-title
+                color: #FFF
+                font-size: 20px
+                font-style: normal
+                font-weight: 800
+                line-height: normal
+                text-transform: uppercase
+                margin-bottom: 10px
+                transform: translateY(30px)
+                opacity: 0
+                visibility: hidden
+                transition: opacity, transform, visibility, 1s ease
+            
+                strong
+                    display: inline-block
+                    color: #D90009
+                    font-weight: 800
+
+            .desc
+                color: #FFF
+                font-size: 12px
+                font-style: normal
+                font-weight: 700
+                line-height: normal
+                margin-bottom: 19px
+                transform: translateY(30px)
+                opacity: 0
+                visibility: hidden
+                transition: opacity, transform, visibility, 1s ease
+
+                ul
+                    padding-left: 20px
+                    margin-top: 0
+                    margin-bottom: 16px
+
+                    li
+                        &:not(:last-child)
+                            margin-bottom: 10px
+
+                span
+                    display: inline-block
+                    color: #D90009
+
+    .slide-outer
+        padding-left: 16px
+
+    .activity-slide
+        max-width: 100vh
+        // transition: all 1s ease
+
+        .swiper-slide
+            transition: all .4s ease
+
+        .swiper-pagination
+            position: static
+            padding-top: 40px
+
+        .swiper-pagination-bullet
+            width: 4px
+            height: 4px
+            background-color: #fff
